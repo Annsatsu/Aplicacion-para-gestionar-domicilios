@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <h:head>
+        <title> Gestion de domicilios </title>
+    </h:head>
+
+    <h:body style="background-color: rgba(90,97,255,0.53)">
+        <div class="ui-g">
+            <div class="ui-g-1"><p:graphicImage value="imagenes/archivo.png"/></div>
+            <div class="ui-g-10">
+                <h:form>
+                    <p:menubar style="width: 1030px; background-color:rgba(7,255,216,0.43)">
+                        <p:menuitem value="Iniciar sesión" icon="ui-icon-key" url="iniciarsesion.xhtml"/>
+                        <p:submenu label="Funciones">
+                            <p:menuitem value="Informe semanal"/>
+                            <p:menuitem value="Informe por compra"/>
+                        </p:submenu>
+                        <p:menuitem value="GitHub" icon="ui-icon-bookmark"
+                                    url="https://github.com/Annsatsu/Aplicacion-para-gestionar-domicilios/wiki"/>
+                        <p:menuitem value="Salir" url="https://www.google.com" icon="ui-icon-power" style="background-color:rgba(14,153,255,0.53);margin-left: 634px"/>
+                    </p:menubar>
+                </h:form>
+
+            </div>
+            <div class="ui-g-1"><p:graphicImage value="imagenes/archivo.png"/></div>
+        </div>
+
+        <div class="ui-g">
+            <div class="ui-g-1">
+                <p:imageSwitch effect="shuffle" style="background-color:rgba(90,97,255,0.53);margin-left: 60px" >
+                    <ui:repeat value="#{indexBean.images}" var="image" >
+                        <p:graphicImage value="/imagenes/#{image}" style="width:500px;height: 400px"/>
+                    </ui:repeat>
+                </p:imageSwitch>
+            </div>
+            <div class="ui-g-1" style="width: 530px;margin-left: 500px;border-style:dotted; background-color: rgba(25,6,0,0.53)">
+                <h2 style="text-align:center"> Gestión de domicilios</h2>
+                <p>
+                    Hola
+                </p>
+            </div>
+        </div>
+
+        <p:accordionPanel>
+            <p:tab title="Información de la empresa">
+                <h:panelGrid columns="2" cellpadding="10">
+                    <p:graphicImage name="demo/images/godfather/godfather1.jpg" />
+                    <h:outputText
+                            value="" />
+                </h:panelGrid>
+            </p:tab>
+            <p:tab title="¿Cómo funciona?">
+                <h:panelGrid columns="2" cellpadding="10">
+                    <p:graphicImage name="demo/images/godfather/godfather2.jpg" />
+                    <h:outputText value=" " />
+                </h:panelGrid>
+            </p:tab>
+            <p:tab title="Creditos">
+                <h:panelGrid columns="2" cellpadding="10">
+                    <p:graphicImage name="demo/images/godfather/godfather3.jpg" />
+                    <h:outputText value="" />
+                </h:panelGrid>
+            </p:tab>
+        </p:accordionPanel>
+
+    </h:body>
+
+</html>
