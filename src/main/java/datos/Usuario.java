@@ -1,6 +1,6 @@
 package datos;
 
-public class Usuario {
+public class Usuario{
     private String nombreUsuario;
     private String contraseña;
     private String tipoUsuario;
