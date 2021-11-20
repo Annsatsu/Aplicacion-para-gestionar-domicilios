@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <h:head>
+        <title> Gerente </title>
+    </h:head>
+
+    <body style="background-image:url(imagenes/prueba.jpg)">
+        <div class="ui-g">
+            <div class="ui-g-1"><p:graphicImage value="imagenes/archivo.png"/></div>
+            <div class="ui-g-10">
+                <h:form>
+                    <!--Menu-->
+                    <p:menubar style="width: 1030px; background-color:#c1ffb3">
+                        <p:menuitem value="Tienda" icon="ui-icon-cart"/>
+                        <p:menuitem value="Producto" icon="ui-icon-tag"/>
+                        <p:menuitem value="Gerente" disabled="true"
+                                    style="color: aliceblue;font-size:25px;background-color:black;
+                                    margin-left: 260px"/>
+                        <p:menuitem value="Cerrar sesión" url="index.xhtml" icon="ui-icon-power"
+                                    style="background-color:rgba(14,153,255,0.53);margin-left: 345px"/>
+
+                    </p:menubar>
+                </h:form>
+
+            </div>
+            <div class="ui-g-1"><p:graphicImage value="imagenes/archivo.png"/></div>
+        </div>
+
+        <div class="ui-g-1" style="width: 430px;margin-left: 410px;
+                            border-style:inset; background-color:rgba(193,255,179,0.56)">
+            <h2 style="text-align:center"> Crear producto</h2>
+
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h3>Nombre producto: </h3>
+                    <p:inputText/>
+                    <h3>Peso: </h3>
+                    <p:inputText/>
+                    <h3>Precio: </h3>
+                    <p:inputText/>
+                    <h3>Marca: </h3>
+                    <p:inputText/>
+                </h:panelGrid>
+
+            </h:form>
+
+        </div>
+
+    </body>
+
+</html>

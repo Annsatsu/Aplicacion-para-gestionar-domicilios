@@ -17,8 +17,10 @@
             <div class="ui-g-10">
                 <h:form>
                     <p:menubar style="width: 1030px; background-color:rgba(7,255,216,0.43)">
-                        <p:menuitem value="Inicio" icon="ui-icon-home"/>
-                        <p:menuitem value="Inicio de sesión" disabled="true" style="color: aliceblue;font-size:25px;background-color:black;margin-left: 350px"/>
+                        <p:menuitem value="Inicio" icon="ui-icon-home" url="index.xhtml"/>
+                        <p:menuitem value="Inicio de sesión" disabled="true"
+                                    style="color: aliceblue;font-size:25px;background-color:black;
+                                    margin-left: 350px"/>
                     </p:menubar>
                 </h:form>
 
@@ -26,11 +28,35 @@
             <div class="ui-g-1"><p:graphicImage value="imagenes/archivo.png"/></div>
         </div>
 
-        <div class="ui-g-1" style="width: 530px;margin-left: 350px;border-style:inset; background-color:ghostwhite">
+        <div class="ui-g-1" style="width: 430px;margin-left: 410px;
+                            border-style:inset; background-color:ghostwhite">
             <h2 style="text-align:center"> Iniciar sesión</h2>
-            <p>
-                Hola
-            </p>
+
+            <h:form>
+                <h3>Usuario</h3>
+
+                <div class="ui-g">
+                    <div class="ui-g-1" ><p:graphicImage value="imagenes/usuario.png"/> </div>
+                    <div class="ui-g-10">
+                        <span class="ui-float-label">
+                            <p:inputText id="floatUsuario" value="#{iniciarSesionBean.texto}"/>
+                            <p:outputLabel for="@previous" value="Usuario"/>
+                        </span>
+                    </div>
+                </div>
+
+                <h3>Contraseña</h3>
+                <div class="ui-g">
+                    <div class="ui-g-1"><p:graphicImage value="imagenes/contraseña.png"/></div>
+                    <div class="ui-g-10">
+                        <span class="ui-float-label">
+                            <p:inputText id="floatContraseña" value="#{iniciarSesionBean.texto}" />
+                            <p:outputLabel for="@previous" value="Contraseña" />
+                        </span>
+                    </div>
+                </div>
+            </h:form>
+
         </div>
 
 

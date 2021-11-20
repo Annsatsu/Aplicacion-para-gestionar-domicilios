@@ -16,15 +16,17 @@
             <div class="ui-g-1"><p:graphicImage value="imagenes/archivo.png"/></div>
             <div class="ui-g-10">
                 <h:form>
+                    <!--Menu-->
                     <p:menubar style="width: 1030px; background-color:rgba(7,255,216,0.43)">
                         <p:menuitem value="Iniciar sesión" icon="ui-icon-key" url="iniciarsesion.xhtml"/>
-                        <p:submenu label="Funciones">
-                            <p:menuitem value="Informe semanal"/>
-                            <p:menuitem value="Informe por compra"/>
-                        </p:submenu>
+                        <p:menuitem value="Funciones" url="#funciones"/>
                         <p:menuitem value="GitHub" icon="ui-icon-bookmark"
                                     url="https://github.com/Annsatsu/Aplicacion-para-gestionar-domicilios/wiki"/>
-                        <p:menuitem value="Salir" url="https://www.google.com" icon="ui-icon-power" style="background-color:rgba(14,153,255,0.53);margin-left: 634px"/>
+                        <p:menuitem value="Gestión de domicilios" disabled="true"
+                                    style="color: aliceblue;font-size:25px;background-color:black;
+                                    margin-left: 110px"/>
+                        <p:menuitem value="Salir" url="https://www.google.com" icon="ui-icon-power"
+                                    style="background-color:rgba(14,153,255,0.53);margin-left: 285px"/>
                     </p:menubar>
                 </h:form>
 
@@ -32,43 +34,78 @@
             <div class="ui-g-1"><p:graphicImage value="imagenes/archivo.png"/></div>
         </div>
 
+        <!--Imagenes-->
         <div class="ui-g">
-            <div class="ui-g-1">
+            <div class="ui-g-1" style="width: 50px;margin-left: 50px">
                 <p:imageSwitch effect="shuffle" style="background-color:rgba(90,97,255,0.53);margin-left: 60px" >
                     <ui:repeat value="#{indexBean.images}" var="image" >
                         <p:graphicImage value="/imagenes/#{image}" style="width:500px;height: 400px"/>
                     </ui:repeat>
                 </p:imageSwitch>
             </div>
-            <div class="ui-g-1" style="width: 530px;margin-left: 500px;border-style:dotted; background-color: rgba(25,6,0,0.53)">
+            <div class="ui-g-1" style="width: 400px;margin-left: 650px;
+                 border-style:dotted; background-color:rgba(202,255,187,0.36)">
                 <h2 style="text-align:center"> Gestión de domicilios</h2>
                 <p>
-                    Hola
+                    <p style="font-weight: bold">
+                        Objeto
+                    </p>
+                    Esta aplicación gestiona los domicilios con la siguiente información:
+                    quien pidió el domicilio, que pidió y de donde se realizó.
+                    Reportes e informes de los productos que más se vendieron por zonas(barrio).
+
                 </p>
             </div>
         </div>
 
-        <p:accordionPanel>
-            <p:tab title="Información de la empresa">
-                <h:panelGrid columns="2" cellpadding="10">
-                    <p:graphicImage name="demo/images/godfather/godfather1.jpg" />
-                    <h:outputText
-                            value="" />
-                </h:panelGrid>
-            </p:tab>
-            <p:tab title="¿Cómo funciona?">
-                <h:panelGrid columns="2" cellpadding="10">
-                    <p:graphicImage name="demo/images/godfather/godfather2.jpg" />
-                    <h:outputText value=" " />
-                </h:panelGrid>
-            </p:tab>
-            <p:tab title="Creditos">
-                <h:panelGrid columns="2" cellpadding="10">
-                    <p:graphicImage name="demo/images/godfather/godfather3.jpg" />
-                    <h:outputText value="" />
-                </h:panelGrid>
-            </p:tab>
-        </p:accordionPanel>
+        <!--Panel acordeon-->
+        <div id="funciones">
+            <p:accordionPanel>
+                <p:tab title="Información de la empresa">
+                    <h:panelGrid>
+                        <f:facet name="header">
+                            <p:graphicImage value="imagenes/empresa.png"/>
+                        </f:facet>
+                    </h:panelGrid>
+                    <h:panelGrid>
+                        <h:outputText value="La empresa se dedica a realizar informes sobre la información
+                                            suministrada por cada tienda registrada en nuestros datos."
+                                      style="color: black"/>
+                    </h:panelGrid>
+                </p:tab>
+
+                <p:tab title="¿Cómo funciona?">
+                    <h:panelGrid>
+                        <f:facet name="header">
+                            <p:graphicImage value="imagenes/config.png"/>
+                        </f:facet>
+                    </h:panelGrid>
+                    <h:panelGrid columns="7" cellpadding="1">
+                        <h:outputText value="1."
+                                      style="color: red; font-weight: bolder"/>
+                        <h:outputText value="Se realizarán informes detallados de las compras realizadas
+                                             a las tiendas registradas en nuestro sistema.
+                                             Se mostrará la siguiente información:"
+                                      style="color: black"/>
+                    </h:panelGrid>
+                        <h:panelGrid columns="1">
+                            <h:outputText value="- Nombre del cliente." style="color: black"/>
+                            <h:outputText value="- Dirección." style="color: black"/>
+                            <h:outputText value="- Productos comprados." style="color: black"/>
+                            <h:outputText value="- Nombre de la tienda junto con el nombre del barrio."
+                                          style="color: black"/>
+                        </h:panelGrid>
+                    <h:panelGrid columns="7" cellpadding="1">
+                        <h:outputText value="2."
+                                      style="color: red; font-weight: bolder"/>
+                        <h:outputText value="Se realizarán informes de los productos que más se vendieron en
+                                            las respectivas zonas de la ciudad."
+                                      style="color: black"/>
+                    </h:panelGrid>
+                </p:tab>
+            </p:accordionPanel>
+        </div>
+
 
     </h:body>
 

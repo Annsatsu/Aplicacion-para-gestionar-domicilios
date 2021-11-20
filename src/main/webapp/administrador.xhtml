@@ -8,10 +8,31 @@
       xmlns:ui="http://java.sun.com/jsf/facelets">
 
     <h:head>
-        <title> Usuario administrador </title>
+        <title> Administrador </title>
     </h:head>
 
-    <body>
+    <body style="background-color: rgba(216,208,255,0.56)">
+    <div class="ui-g">
+        <div class="ui-g-1"><p:graphicImage value="imagenes/archivo.png"/></div>
+        <div class="ui-g-10">
+            <h:form>
+                <!--Menu-->
+                <p:menubar style="width: 1030px; background-color:rgba(7,255,216,0.43)">
+                    <p:menuitem value="Iniciar sesión" icon="ui-icon-key" url="iniciarsesion.xhtml"/>
+                    <p:menuitem value="Funciones" url="#funciones"/>
+                    <p:menuitem value="GitHub" icon="ui-icon-bookmark"
+                                url="https://github.com/Annsatsu/Aplicacion-para-gestionar-domicilios/wiki"/>
+                    <p:menuitem value="Administrador" disabled="true"
+                                style="color: aliceblue;font-size:25px;background-color:black;
+                                    margin-left: 150px"/>
+                    <p:menuitem value="Salir" url="https://www.google.com" icon="ui-icon-power"
+                                style="background-color:rgba(14,153,255,0.53);margin-left: 325px"/>
+                </p:menubar>
+            </h:form>
+
+        </div>
+        <div class="ui-g-1"><p:graphicImage value="imagenes/archivo.png"/></div>
+    </div>
 
     </body>
 
