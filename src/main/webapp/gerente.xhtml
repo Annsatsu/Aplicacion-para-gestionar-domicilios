@@ -19,12 +19,14 @@
                     <!--Menu-->
                     <p:menubar style="width: 1030px; background-color:#c1ffb3">
                         <p:menuitem value="Tienda" icon="ui-icon-cart"/>
-                        <p:menuitem value="Producto" icon="ui-icon-tag"/>
+                        <p:submenu label="Productos">
+                            <p:menuitem value="Lista" icon="ui-icon-tag"/>
+                        </p:submenu>
                         <p:menuitem value="Gerente" disabled="true"
                                     style="color: aliceblue;font-size:25px;background-color:black;
                                     margin-left: 260px"/>
                         <p:menuitem value="Cerrar sesión" url="index.xhtml" icon="ui-icon-power"
-                                    style="background-color:rgba(14,153,255,0.53);margin-left: 345px"/>
+                                    style="background-color:rgba(14,153,255,0.53);margin-left: 335px"/>
 
                     </p:menubar>
                 </h:form>
@@ -38,16 +40,21 @@
             <h2 style="text-align:center"> Crear producto</h2>
 
             <h:form>
-                <h:panelGrid columns="2">
-                    <h3>Nombre producto: </h3>
-                    <p:inputText/>
-                    <h3>Peso: </h3>
-                    <p:inputText/>
-                    <h3>Precio: </h3>
-                    <p:inputText/>
-                    <h3>Marca: </h3>
-                    <p:inputText/>
-                </h:panelGrid>
+                <p:panel id="panel" style="background-color:#c1ffb3;text-align: center">
+                    <p:messages id="msges"/>
+                    <h:panelGrid columns="2">
+                        <p:outputLabel for="txtNombre" value="Nombre:" style="color: black"/>
+                        <p:inputText id="txtNombre" value="#{gerenteBean.nombre}" label="Nombre "/>
+                        <p:outputLabel for="txtPeso" value="Peso:" style="color: black"/>
+                        <p:inputText id="txtPeso" value="#{gerenteBean.peso}" label="Peso"/>
+                        <p:outputLabel for="txtPrecio" value="Precio:" style="color: black"/>
+                        <p:inputText id="txtPrecio" value="#{gerenteBean.precio}" label="Precio"/>
+                        <p:outputLabel for="txtReferencia" value="Referencia:" style="color: black"/>
+                        <p:inputText id="txtReferencia" value="#{gerenteBean.referencia}" label="Referencia"/>
+                    </h:panelGrid>
+                    <p:commandButton value="Agregar" update="panel" style="margin-right:20px"
+                                     action="#{gerenteBean.agregarProducto()}"/>
+                </p:panel>
 
             </h:form>
 

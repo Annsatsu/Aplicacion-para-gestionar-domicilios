@@ -10,6 +10,10 @@ public class UsuarioCtrl {
     private UsuarioDao userDao;
     private Usuario usuario;
 
+    public UsuarioCtrl() {
+        cargarUsuarios();
+    }
+
     public void actualizarPersistencia(){
         userDao=new UsuarioDao();
         userDao.guardarArchivo(usuarios);

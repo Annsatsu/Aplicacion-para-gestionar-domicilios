@@ -11,13 +11,13 @@
         <title> Administrador </title>
     </h:head>
 
-    <body style="background-color: rgba(216,208,255,0.56)">
+    <body style="background-image: url(imagenes/tienda.jpg)">
     <div class="ui-g">
         <div class="ui-g-1"><p:graphicImage value="imagenes/archivo.png"/></div>
         <div class="ui-g-10">
             <h:form>
                 <!--Menu-->
-                <p:menubar style="width: 1030px; background-color:rgba(7,255,216,0.43)">
+                <p:menubar style="width: 1030px; background-color:rgba(174,66,255,0.56)">
                     <p:menuitem value="Iniciar sesión" icon="ui-icon-key" url="iniciarsesion.xhtml"/>
                     <p:menuitem value="Funciones" url="#funciones"/>
                     <p:menuitem value="GitHub" icon="ui-icon-bookmark"
@@ -33,6 +33,29 @@
         </div>
         <div class="ui-g-1"><p:graphicImage value="imagenes/archivo.png"/></div>
     </div>
+    <div class="ui-g-1" style="width: 430px;margin-left: 410px;
+                            border-style:inset; background-color:rgba(170,91,255,0.76)">
+        <h2 style="text-align:center; color:black"> Crear tienda</h2>
+        <h:form>
+            <p:panel id="panel" style="background-color:#ae42ff;text-align: center">
+                <p:messages id="msges"/>
+                <h:panelGrid columns="2">
+                    <p:outputLabel for="txtId" value="Identificación:" style="color: black"/>
+                    <p:inputText id="txtId" value="#{administradorBean.id}" label="Identificacion "/>
+                    <p:outputLabel for="txtNombre" value="Nombre:" style="color: black"/>
+                    <p:inputText id="txtNombre" value="#{administradorBean.nombre}" label="Nombre"/>
+                    <p:outputLabel for="txtDireccion" value="Dirección:" style="color: black"/>
+                    <p:inputText id="txtDireccion" value="#{administradorBean.direccion}" label="Direccion"/>
+                    <p:outputLabel for="txtNombreBarrio" value="Barrio:" style="color: black"/>
+                    <p:inputText id="txtNombreBarrio" value="#{administradorBean.nombreBarrio}" label="Barrio"/>
+                </h:panelGrid>
+                <p:commandButton value="Agregar" update="panel" style="margin-right:20px"
+                                 action="#{gerenteBean.agregarProducto()}"/>
+            </p:panel>
+
+        </h:form>
+    </div>
+
 
     </body>
 

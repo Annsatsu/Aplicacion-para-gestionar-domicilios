@@ -1,10 +1,14 @@
 package datos;
 
-public class Tienda {
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public class Tienda implements Serializable {
     private int id;
     private String nombre;
     private String direccion;
     private String nombreBarrio;
+    private ArrayList<Producto> productos;
 
     public Tienda(){
 
@@ -40,5 +44,13 @@ public class Tienda {
 
     public void setNombreBarrio(String nombreBarrio) {
         this.nombreBarrio = nombreBarrio;
+    }
+
+    public ArrayList<Producto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(ArrayList<Producto> productos) {
+        this.productos = productos;
     }
 }

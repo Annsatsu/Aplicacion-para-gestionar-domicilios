@@ -2,12 +2,10 @@ package logica;
 
 import datos.Producto;
 import persistencia.ProductoDao;
-
 import java.util.ArrayList;
 
 public class ProductoCtrl {
     private ArrayList<Producto> listaProductos;
-    private ProductoDao productoDao;
     private Producto producto;
 
     public ProductoCtrl() {
@@ -15,13 +13,13 @@ public class ProductoCtrl {
     }
 
     public void cargarProductos(){
-        productoDao=new ProductoDao();
-        listaProductos=productoDao.abrirArchivo();
+        ProductoDao archivo=new ProductoDao();
+        listaProductos=archivo.abrirArchivo();
     }
 
     public void actualizarPersistencia(){
-        productoDao=new ProductoDao();
-        productoDao.guardarArchivo(listaProductos);
+        ProductoDao archivo=new ProductoDao();
+        archivo.guardarArchivo(listaProductos);
     }
 
     public boolean agregarProducto(Producto producto){
@@ -46,10 +44,8 @@ public class ProductoCtrl {
 
     public boolean editarProducto(Producto producto){
         return false;
-    }
 
-    public ArrayList buscarProductos(){
-        return null;
+
     }
 
     public Producto buscarProducto(int referencia){
@@ -65,6 +61,10 @@ public class ProductoCtrl {
                 return listaProductos.get(i);
         }
         return null;
+    }
+
+    public ArrayList<Producto> getListaProductos() {
+        return listaProductos;
     }
 
     public boolean eliminarProducto(Producto producto){
