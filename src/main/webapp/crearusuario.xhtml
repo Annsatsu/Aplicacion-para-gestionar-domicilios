@@ -41,15 +41,14 @@
                 <p:panel id="panel" style="background-color:#c1ffb3;text-align: center">
                     <p:messages id="msges"/>
                     <h:panelGrid columns="2">
-                        <p:outputLabel for="txtNombre" value="Usuario:" style="color: black"/>
-                        <p:inputText id="txtNombre" value="#{gerenteBean.nombre}" label="Nombre "/>
-                        <p:outputLabel for="txtPeso" value="Correo:" style="color: black"/>
-                        <p:inputText id="txtPeso" value="#{gerenteBean.peso}" label="Peso"/>
-                        <p:outputLabel for="txtPrecio" value="Contraseña:" style="color: black"/>
-                        <p:inputText id="txtPrecio" value="#{gerenteBean.precio}" label="Precio"/>
+                        <p:outputLabel for="txtUsuario" value="Usuario:" style="color: black"/>
+                        <p:inputText id="txtUsuario" value="#{iniciarSesionBean.usuario}" label="Usuario "/>
+                        <p:outputLabel for="txtContraseña" value="Contraseña:" style="color: black"/>
+                        <p:inputText id="txtContraseña" value="#{iniciarSesionBean.contraseña}" label="Contraseña"/>
                     </h:panelGrid>
-                    <p:commandButton value="Agregar" update="panel" style="margin-right:20px"
-                                     action="#{gerenteBean.agregarProducto()}"/>
+                        <p:commandButton value="Crear" update="panel" style="margin-right:20px"
+                                         action="#{crearUsuarioBean.crearUsuario()}"/>
+
                 </p:panel>
 
             </h:form>
