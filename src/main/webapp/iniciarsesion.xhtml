@@ -33,29 +33,29 @@
             <h2 style="text-align:center"> Iniciar sesión</h2>
 
             <h:form>
-                <h3>Usuario</h3>
-
-                <div class="ui-g">
-                    <div class="ui-g-1" ><p:graphicImage value="imagenes/usuario.png"/> </div>
-                    <div class="ui-g-10">
+                <p:panel id="panel">
+                    <h3>Usuario</h3>
+                    <div class="ui-g">
+                        <div class="ui-g-1" ><p:graphicImage value="imagenes/usuario.png"/> </div>
+                        <div class="ui-g-10">
                         <span class="ui-float-label">
-                            <p:inputText id="floatUsuario" value="#{iniciarSesionBean.texto}"/>
+                            <p:inputText id="floatUsuario" value="#{iniciarSesionBean.usuario}"/>
                             <p:outputLabel for="@previous" value="Usuario"/>
                         </span>
+                        </div>
                     </div>
-                </div>
 
-                <h3>Contraseña</h3>
-                <div class="ui-g">
-                    <div class="ui-g-1"><p:graphicImage value="imagenes/contraseña.png"/></div>
-                    <div class="ui-g-10">
-                        <span class="ui-float-label">
-                            <p:inputText id="floatContraseña" value="#{iniciarSesionBean.texto}" />
-                            <p:outputLabel for="@previous" value="Contraseña" />
-                        </span>
+                    <h3>Contraseña</h3>
+                    <div class="ui-g">
+                        <div class="ui-g-1"><p:graphicImage value="imagenes/contraseña.png"/></div>
+                        <div class="ui-g-10">
+                            <p:password value="#{iniciarSesionBean.contraseña}"/>
+                        </div>
                     </div>
-                </div>
-                <p:commandButton value="Ingresar" style="margin-right:20px;"/>
+                    <p:commandButton value="Ingresar" action="#{iniciarSesionBean.iniciarSesion()}"
+                                     style="margin-right:20px" update="panel"/>
+                    <p:messages id="msgs"/>
+                </p:panel>
             </h:form>
         </div>
 

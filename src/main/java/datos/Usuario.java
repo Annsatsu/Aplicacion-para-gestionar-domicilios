@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Usuario implements Serializable {
     private String nombreUsuario;
     private String contraseña;
-    private String tipoUsuario;
+    private int tipoUsuario;
     private String correo;
 
     public Usuario(){
@@ -28,11 +28,11 @@ public class Usuario implements Serializable {
         this.contraseña = contraseña;
     }
 
-    public String getTipoUsuario() {
+    public int getTipoUsuario() {
         return tipoUsuario;
     }
 
-    public void setTipoUsuario(String tipoUsuario) {
+    public void setTipoUsuario(int tipoUsuario) {
         this.tipoUsuario = tipoUsuario;
     }
 

@@ -68,7 +68,7 @@ public class TiendaDao {
         FileInputStream fi = null;
         try {
             try {
-                fi = new FileInputStream("productos.asi");
+                fi = new FileInputStream("tiendas.asi");
                 ObjectInputStream oi = new ObjectInputStream(fi);
                 this.listaTiendas = (ArrayList<Tienda>)oi.readObject();
                 oi.close();

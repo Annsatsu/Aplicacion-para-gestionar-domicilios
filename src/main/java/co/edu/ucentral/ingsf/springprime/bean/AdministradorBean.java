@@ -1,5 +1,6 @@
 package co.edu.ucentral.ingsf.springprime.bean;
 
+import datos.Producto;
 import datos.Tienda;
 import logica.TiendaCtrl;
 import lombok.Getter;
@@ -14,6 +15,8 @@ import javax.faces.bean.RequestScoped;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Component
 @ManagedBean
@@ -30,13 +33,14 @@ public class AdministradorBean implements Serializable {
 
     public void agregarTienda(){
         Tienda tienda = new Tienda();
+        ArrayList<Producto> array;
+        ProductoDao productoDao = new ProductoDao();
         tienda.setId(id);
         tienda.setNombre(nombre);
         tienda.setDireccion(direccion);
         tienda.setNombreBarrio(nombreBarrio);
-
-        ProductoDao producto = new ProductoDao();
-        tienda.setProductos(producto.abrirArchivo());
+        array=productoDao.abrirArchivo();
+        tienda.setProductos(array);
 
         if (id!=0 && nombre!="" && direccion!="" && nombreBarrio!=""){
             TiendaCtrl ctrl = new TiendaCtrl();

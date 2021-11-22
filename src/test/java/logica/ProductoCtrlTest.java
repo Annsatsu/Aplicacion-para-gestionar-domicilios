@@ -20,10 +20,10 @@ class ProductoCtrlTest {
     void agregarProducto() {
         ProductoCtrl productoCtrl =new ProductoCtrl();
         Producto producto=new Producto();
-        producto.setNombre("Papas");
-        producto.setPeso(120);
-        producto.setPrecio(1200.2);
-        producto.setReferencia(1);
+        producto.setNombre("guia");
+        producto.setPeso(0);
+        producto.setPrecio(0);
+        producto.setReferencia(0);
         productoCtrl.agregarProducto(producto);
     }
 

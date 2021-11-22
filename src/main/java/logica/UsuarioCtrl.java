@@ -18,17 +18,22 @@ public class UsuarioCtrl {
         userDao=new UsuarioDao();
         userDao.guardarArchivo(usuarios);
     }
-    private void cargarUsuarios(){
+    public void cargarUsuarios(){
         userDao = new UsuarioDao();
         usuarios=userDao.abrirArchivo();
 
     }
 
-    private boolean acceder(String nombreUsuario,String contraseña){
-        return false;
+    public int iniciarSesion(String nombreUsuario,String contraseña){
+        if (buscarUsuario(nombreUsuario)!=null){
+            if (buscarUsuario(nombreUsuario).getContraseña().equals(contraseña)){
+                return buscarUsuario(nombreUsuario).getTipoUsuario();
+            }
+        }
+        return 0;
     }
 
-    private boolean crearUsuario(String nombreUsuario,String contraseña,String correo){
+    public boolean crearUsuario(Usuario usuario){
         if(usuarios==null)
             return false;
         if (usuarios.isEmpty())
@@ -47,23 +52,25 @@ public class UsuarioCtrl {
         return true;
     }
 
-    private boolean cerrarSesion(){
+    public boolean cerrarSesion(){
         return false;
     }
 
-    private Usuario buscarUsuario(String nombreUsuario){
+    public Usuario buscarUsuario(String nombreUsuario){
         if (usuarios==null){
             cargarUsuarios();
+        }
+        if (usuarios.isEmpty()){
             return null;
         }
         for (int i=0;i< usuarios.size();i++){
-            if (nombreUsuario==usuarios.get(i).getNombreUsuario())
+            if (nombreUsuario.equals(usuarios.get(i).getNombreUsuario()))
                 return usuarios.get(i);
         }
         return null;
     }
 
-    private ArrayList buscarUsuarios(){
+    public ArrayList buscarUsuarios(){
         return null;
     }
 }

@@ -1,5 +1,6 @@
 package logica;
 
+import datos.Producto;
 import datos.Tienda;
 import persistencia.TiendaDao;
 
@@ -25,6 +26,10 @@ public class TiendaCtrl {
         tiendaDao.guardarArchivo(listaTiendas);
     }
 
+    public void asociarProducto(int referencia){
+
+
+    }
     public boolean agregarTienda(Tienda tienda){
         if (tienda==null)
             return false;

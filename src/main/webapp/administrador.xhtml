@@ -18,14 +18,14 @@
             <h:form>
                 <!--Menu-->
                 <p:menubar style="width: 1030px; background-color:rgba(174,66,255,0.56)">
-                    <p:menuitem value="Iniciar sesión" icon="ui-icon-key" url="iniciarsesion.xhtml"/>
-                    <p:menuitem value="Funciones" url="#funciones"/>
-                    <p:menuitem value="GitHub" icon="ui-icon-bookmark"
-                                url="https://github.com/Annsatsu/Aplicacion-para-gestionar-domicilios/wiki"/>
+                    <p:menuitem value="Crear usuario" icon="ui-icon-pencil" url="crearusuario.xhtml"/>
+                    <p:submenu label="Tiendas" icon="ui-icon-cart">
+                        <p:menuitem value="Lista" icon="ui-icon-tag"/>
+                    </p:submenu>
                     <p:menuitem value="Administrador" disabled="true"
                                 style="color: aliceblue;font-size:25px;background-color:black;
                                     margin-left: 150px"/>
-                    <p:menuitem value="Salir" url="https://www.google.com" icon="ui-icon-power"
+                    <p:menuitem value="Salir" url="index.xhtml" icon="ui-icon-power"
                                 style="background-color:rgba(14,153,255,0.53);margin-left: 325px"/>
                 </p:menubar>
             </h:form>
@@ -50,7 +50,7 @@
                     <p:inputText id="txtNombreBarrio" value="#{administradorBean.nombreBarrio}" label="Barrio"/>
                 </h:panelGrid>
                 <p:commandButton value="Agregar" update="panel" style="margin-right:20px"
-                                 action="#{gerenteBean.agregarProducto()}"/>
+                                 action="#{administradorBean.agregarTienda()}"/>
             </p:panel>
 
         </h:form>
