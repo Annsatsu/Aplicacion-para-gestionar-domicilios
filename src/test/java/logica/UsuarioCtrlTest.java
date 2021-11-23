@@ -10,14 +10,6 @@ class UsuarioCtrlTest {
     UsuarioCtrl userCtrl= new UsuarioCtrl();
 
     @Test
-    void cargarUsuarios() {
-    }
-
-    @Test
-    void acceder() {
-    }
-
-    @Test
     void crearUsuario() {
         Usuario user = new Usuario();
         UsuarioCtrl userCtrl = new UsuarioCtrl();

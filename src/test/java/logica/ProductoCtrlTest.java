@@ -8,15 +8,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class ProductoCtrlTest {
 
     @Test
-    void cargarProductos() {
-
-    }
-
-    @Test
-    void actualizarPersistencia() {
-    }
-
-    @Test
     void agregarProducto() {
         ProductoCtrl productoCtrl =new ProductoCtrl();
         Producto producto=new Producto();
@@ -29,15 +20,6 @@ class ProductoCtrlTest {
     }
 
     @Test
-    void editarProducto() {
-    }
-
-    @Test
-    void buscarProductos() {
-
-    }
-
-    @Test
     void buscarProducto() {
         ProductoCtrl productoCtrl= new ProductoCtrl();
         Producto producto=new Producto();
@@ -45,7 +27,4 @@ class ProductoCtrlTest {
 
     }
 
-    @Test
-    void eliminarProducto() {
-    }
 }

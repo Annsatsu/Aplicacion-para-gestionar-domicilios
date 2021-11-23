@@ -21,13 +21,13 @@ class DomicilioCtrlTest {
         DomicilioCtrl domicilioCtrl= new DomicilioCtrl();
         ArrayList<Producto> listaProductos= new ArrayList<>();
         Domicilio domicilio=new Domicilio();
-        TiendaDao archivoTiendas= new TiendaDao();
+
         ProductoDao productoDao= new ProductoDao();
         domicilio.setNumeroFactura(10);
         domicilio.setNombreCliente("Camilo");
         listaProductos.add(productoDao.abrirArchivo().get(0));
         listaProductos.add(productoDao.abrirArchivo().get(1));
-        domicilio.setProductos(listaProductos);
+        //domicilio.setProductos(listaProductos);
         domicilio.setTienda(1);
         domicilioCtrl.agregarDomicilio(domicilio);
     }
