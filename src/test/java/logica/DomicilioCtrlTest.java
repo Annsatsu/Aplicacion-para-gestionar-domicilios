@@ -27,7 +27,7 @@ class DomicilioCtrlTest {
         domicilio.setNombreCliente("Camilo");
         listaProductos.add(productoDao.abrirArchivo().get(0));
         listaProductos.add(productoDao.abrirArchivo().get(1));
-        //domicilio.setProductos(listaProductos);
+        domicilio.setProductos(listaProductos);
         domicilio.setTienda(1);
         domicilioCtrl.agregarDomicilio(domicilio);
     }
