@@ -66,8 +66,4 @@ public class ProductoCtrl {
     public ArrayList<Producto> getListaProductos() {
         return listaProductos;
     }
-
-    public boolean eliminarProducto(Producto producto){
-        return false;
-    }
 }

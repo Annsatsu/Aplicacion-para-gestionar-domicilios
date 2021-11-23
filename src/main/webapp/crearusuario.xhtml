@@ -19,7 +19,7 @@
                 <p:menubar style="width: 1030px; background-color:rgba(175,138,195,0.83)">
                     <p:menuitem value="Regresar" icon=" ui-icon-arrowreturn-1-w" url="administrador.xhtml"/>
                     <p:submenu label="Usuarios" icon="ui-icon-person">
-                        <p:menuitem value="Lista"/>
+                        <p:menuitem value="Lista" url="listausuarios.xhtml" />
                     </p:submenu>
                     <p:menuitem value="Crear usuario" disabled="true"
                                 style="color: aliceblue;font-size:25px;background-color:black;
@@ -42,9 +42,9 @@
                     <p:messages id="msges"/>
                     <h:panelGrid columns="2">
                         <p:outputLabel for="txtUsuario" value="Usuario:" style="color: black"/>
-                        <p:inputText id="txtUsuario" value="#{iniciarSesionBean.usuario}" label="Usuario "/>
+                        <p:inputText id="txtUsuario" value="#{crearUsuarioBean.nombreUsuario}" label="Usuario "/>
                         <p:outputLabel for="txtContraseña" value="Contraseña:" style="color: black"/>
-                        <p:inputText id="txtContraseña" value="#{iniciarSesionBean.contraseña}" label="Contraseña"/>
+                        <p:inputText id="txtContraseña" value="#{crearUsuarioBean.contraseña}" label="Contraseña"/>
                     </h:panelGrid>
                         <p:commandButton value="Crear" update="panel" style="margin-right:20px"
                                          action="#{crearUsuarioBean.crearUsuario()}"/>

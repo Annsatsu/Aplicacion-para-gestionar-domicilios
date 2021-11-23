@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title> Lista tiendas </title>
+    </h:head>
+
+    <body style="background-color:rgba(139,230,255,0.83)">
+        <div class="ui-g">
+            <div class="ui-g-1"><p:graphicImage value="imagenes/archivo.png"/></div>
+            <div class="ui-g-10">
+                <h:form>
+                    <!--Menu-->
+                    <p:menubar style="width: 1030px; background-color:#c1ffb3">
+                        <p:menuitem value="Regresar" icon="ui-icon-arrowreturn-1-w" url="administrador.xhtml"/>
+                        <p:menuitem value="Lista de tiendas" disabled="true"
+                                    style="color: aliceblue;font-size:25px;background-color:black;
+                                                    margin-left: 280px"/>
+                        <p:menuitem value="Cerrar sesión" url="index.xhtml" icon="ui-icon-power"
+                                    style="background-color:rgba(14,153,255,0.53);margin-left: 285px"/>
+                    </p:menubar>
+                </h:form>
+            </div>
+                <div class="ui-g-1"><p:graphicImage value="imagenes/archivo.png"/></div>
+        </div>
+
+        <h:form>
+            <p:dataTable value="#{listaTiendasBean.tiendas}" var="tienda" id="listatiendas">
+                <p:column headerText="Id">
+                    <h:outputText value="#{tienda.id}"/>
+                </p:column>
+                <p:column headerText="Nombre">
+                    <h:outputText value="#{tienda.nombre}"/>
+                </p:column>
+                <p:column headerText="Dirección">
+                    <h:outputText value="#{tienda.direccion}"/>
+                </p:column>
+                <p:column headerText="Nombre barrio">
+                    <h:outputText value="#{tienda.nombreBarrio}"/>
+                </p:column>
+            </p:dataTable>
+            <p:commandButton value="Actualizar"
+                             actionListener="#{listaTiendasBean.init()}" update="listatiendas"/>
+        </h:form>
+
+
+    </body>
+</html>

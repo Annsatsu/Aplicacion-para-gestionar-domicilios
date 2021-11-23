@@ -7,6 +7,7 @@ public class Producto implements Serializable {
     private int peso;
     private double precio;
     private int referencia;
+    private int cantidadProducto=0;
 
     public Producto(){
 
@@ -42,5 +43,13 @@ public class Producto implements Serializable {
 
     public void setReferencia(int referencia) {
         this.referencia = referencia;
+    }
+
+    public int getCantidadProducto() {
+        return cantidadProducto;
+    }
+
+    public void setCantidadProducto(int cantidadProducto) {
+        this.cantidadProducto = cantidadProducto;
     }
 }

@@ -6,7 +6,6 @@ public class Usuario implements Serializable {
     private String nombreUsuario;
     private String contraseña;
     private int tipoUsuario;
-    private String correo;
 
     public Usuario(){
 
@@ -34,13 +33,5 @@ public class Usuario implements Serializable {
 
     public void setTipoUsuario(int tipoUsuario) {
         this.tipoUsuario = tipoUsuario;
-    }
-
-    public String getCorreo() {
-        return correo;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
     }
 }

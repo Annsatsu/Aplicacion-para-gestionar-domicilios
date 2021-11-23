@@ -23,7 +23,8 @@ class ProductoCtrlTest {
         producto.setNombre("guia");
         producto.setPeso(0);
         producto.setPrecio(0);
-        producto.setReferencia(0);
+        producto.setReferencia(4);
+        producto.setCantidadProducto(20);
         productoCtrl.agregarProducto(producto);
     }
 
