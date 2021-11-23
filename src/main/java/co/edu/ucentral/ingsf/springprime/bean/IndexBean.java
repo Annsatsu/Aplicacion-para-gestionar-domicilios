@@ -112,27 +112,4 @@ public class IndexBean implements Serializable {
         FacesContext.getCurrentInstance().addMessage(null, message);
     }
 
-    public void validar(){
-        System.out.println("xxxxx   xxxx");
-
-        if (cadena.isEmpty()){
-            conteo = 0;
-        }else{
-            conteo = cadena.length();
-        }
-
-    }
-    public String ir(){
-        System.out.println("- - - - - - CLICK "+cadena);
-        if (cadena.equals("IR"))
-            return "principal";
-        else
-            return "";
-    }
-    public String guardar(){
-        dataService.crear("metodo");
-        return "";
-
-    }
-
 }

@@ -16,7 +16,7 @@
         <div class="ui-g-10">
             <h:form>
                 <!--Menu-->
-                <p:menubar style="width: 1030px; background-color:rgba(175,138,195,0.83)">
+                <p:menubar style="width: 1030px; background-color:rgba(81,180,255,0.45)">
                     <p:menuitem value="Regresar" icon=" ui-icon-arrowreturn-1-w" url="administrador.xhtml"/>
                     <p:submenu label="Usuarios" icon="ui-icon-person">
                         <p:menuitem value="Lista" url="listausuarios.xhtml" />
@@ -35,16 +35,17 @@
     <div>
         <div class="ui-g-1" style="width: 430px;margin-left: 410px;
                             border-style:inset; background-color: rgba(133,156,195,0.83)">
-            <h2 style="text-align:center"> Crear usuario</h2>
+            <h2 style="text-align:center">Usuario</h2>
 
             <h:form>
                 <p:panel id="panel" style="background-color:#c1ffb3;text-align: center">
                     <p:messages id="msges"/>
+                    <p:graphicImage value="imagenes/usuario2.png"/>
                     <h:panelGrid columns="2">
                         <p:outputLabel for="txtUsuario" value="Usuario:" style="color: black"/>
                         <p:inputText id="txtUsuario" value="#{crearUsuarioBean.nombreUsuario}" label="Usuario "/>
                         <p:outputLabel for="txtContraseña" value="Contraseña:" style="color: black"/>
-                        <p:inputText id="txtContraseña" value="#{crearUsuarioBean.contraseña}" label="Contraseña"/>
+                        <p:password id="txtContraseña" value="#{crearUsuarioBean.contraseña}" label="Contraseña"/>
                     </h:panelGrid>
                         <p:commandButton value="Crear" update="panel" style="margin-right:20px"
                                          action="#{crearUsuarioBean.crearUsuario()}"/>

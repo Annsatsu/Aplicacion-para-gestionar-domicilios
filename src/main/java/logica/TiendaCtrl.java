@@ -26,10 +26,6 @@ public class TiendaCtrl {
         tiendaDao.guardarArchivo(listaTiendas);
     }
 
-    public void asociarProducto(int referencia){
-
-
-    }
     public boolean agregarTienda(Tienda tienda){
         if (tienda==null)
             return false;

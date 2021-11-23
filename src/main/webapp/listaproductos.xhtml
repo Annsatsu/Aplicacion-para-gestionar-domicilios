@@ -10,7 +10,7 @@
     <title> Lista productos </title>
 </h:head>
 
-    <body style="background-color:rgba(139,230,255,0.83)">
+    <body  style="background-image:url(imagenes/prueba.jpg)">
         <div class="ui-g">
             <div class="ui-g-1"><p:graphicImage value="imagenes/archivo.png"/></div>
             <div class="ui-g-10">
@@ -30,17 +30,18 @@
             <div class="ui-g-1"><p:graphicImage value="imagenes/archivo.png"/></div>
         </div>
     <h:form>
-        <p:dataTable value="#{listaProductosBean.productos}" var="producto" id="tablaproductos">
-            <p:column headerText="Nombre">
+        <p:dataTable value="#{listaProductosBean.productos}" var="producto" id="tablaproductos"
+                     style="text-align: center">
+            <p:column headerText="Nombre" style="background-color:rgba(156,217,255,0.53)">
                 <h:outputText value="#{producto.nombre}"/>
             </p:column>
-            <p:column headerText="Peso">
+            <p:column headerText="Peso" style="background-color:rgba(156,217,255,0.53)">
                 <h:outputText value="#{producto.peso}"/>
             </p:column>
-            <p:column headerText="Precio">
+            <p:column headerText="Precio" style="background-color:rgba(156,217,255,0.53)">
                 <h:outputText value="#{producto.precio}"/>
             </p:column>
-            <p:column headerText="Referencia">
+            <p:column headerText="Referencia" style="background-color:rgba(156,217,255,0.53)">
                 <h:outputText value="#{producto.referencia}"/>
             </p:column>
         </p:dataTable>

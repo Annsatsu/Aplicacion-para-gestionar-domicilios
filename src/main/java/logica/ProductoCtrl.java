@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 public class ProductoCtrl {
     private ArrayList<Producto> listaProductos;
-    private Producto producto;
 
     public ProductoCtrl() {
         cargarProductos();
@@ -44,8 +43,6 @@ public class ProductoCtrl {
 
     public boolean editarProducto(Producto producto){
         return false;
-
-
     }
 
     public Producto buscarProducto(int referencia){
@@ -61,9 +58,5 @@ public class ProductoCtrl {
                 return listaProductos.get(i);
         }
         return null;
-    }
-
-    public ArrayList<Producto> getListaProductos() {
-        return listaProductos;
     }
 }

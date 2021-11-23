@@ -40,7 +40,7 @@ public class UsuarioCtrl {
             cargarUsuarios();
         else{
             for (int i=0;i<usuarios.size();i++){
-                if(usuario.getNombreUsuario()==usuarios.get(i).getNombreUsuario())
+                if(usuario.getNombreUsuario().equals(usuarios.get(i).getNombreUsuario()))
                     return false;
             }
         }
@@ -52,9 +52,6 @@ public class UsuarioCtrl {
         return true;
     }
 
-    public boolean cerrarSesion(){
-        return false;
-    }
 
     public Usuario buscarUsuario(String nombreUsuario){
         if (usuarios==null){
@@ -67,10 +64,6 @@ public class UsuarioCtrl {
             if (nombreUsuario.equals(usuarios.get(i).getNombreUsuario()))
                 return usuarios.get(i);
         }
-        return null;
-    }
-
-    public ArrayList buscarUsuarios(){
         return null;
     }
 }

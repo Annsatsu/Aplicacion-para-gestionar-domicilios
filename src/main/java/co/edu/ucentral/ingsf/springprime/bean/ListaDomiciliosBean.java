@@ -1,11 +1,10 @@
 package co.edu.ucentral.ingsf.springprime.bean;
 
-import datos.Producto;
-import logica.ProductoCtrl;
+import datos.Domicilio;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
-import persistencia.ProductoDao;
+import persistencia.DomicilioDao;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
@@ -21,19 +20,19 @@ import java.util.List;
 @Getter
 @Setter
 @RequestScoped
-public class ListaProductosBean implements Serializable {
-    List<Producto> productos;
-    ProductoDao archivoProducto;
 
-    public ListaProductosBean(){
-        archivoProducto=new ProductoDao();
-        productos=archivoProducto.abrirArchivo();
+public class ListaDomiciliosBean implements Serializable {
+    List<Domicilio> domicilios;
+    DomicilioDao archivoDomicilio;
+
+    public ListaDomiciliosBean(){
+        archivoDomicilio= new DomicilioDao();
+        domicilios=archivoDomicilio.abrirArchivo();
     }
 
     @PostConstruct
-    public void init() throws IOException {
-        productos = archivoProducto.abrirArchivo();
-
+    public void init()throws IOException{
+        domicilios=archivoDomicilio.abrirArchivo();
     }
 
 }

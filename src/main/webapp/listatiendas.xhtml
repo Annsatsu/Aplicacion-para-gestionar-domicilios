@@ -10,19 +10,19 @@
         <title> Lista tiendas </title>
     </h:head>
 
-    <body style="background-color:rgba(139,230,255,0.83)">
+    <body style="background-image: url(imagenes/tienda.jpg)">
         <div class="ui-g">
             <div class="ui-g-1"><p:graphicImage value="imagenes/archivo.png"/></div>
             <div class="ui-g-10">
                 <h:form>
                     <!--Menu-->
-                    <p:menubar style="width: 1030px; background-color:#c1ffb3">
+                    <p:menubar style="width: 1030px; background-color:rgba(170,91,255,0.66) ">
                         <p:menuitem value="Regresar" icon="ui-icon-arrowreturn-1-w" url="administrador.xhtml"/>
                         <p:menuitem value="Lista de tiendas" disabled="true"
                                     style="color: aliceblue;font-size:25px;background-color:black;
-                                                    margin-left: 280px"/>
+                                                    margin-left: 320px"/>
                         <p:menuitem value="Cerrar sesión" url="index.xhtml" icon="ui-icon-power"
-                                    style="background-color:rgba(14,153,255,0.53);margin-left: 285px"/>
+                                    style="background-color:rgba(14,153,255,0.53);margin-left: 265px"/>
                     </p:menubar>
                 </h:form>
             </div>
@@ -30,17 +30,18 @@
         </div>
 
         <h:form>
-            <p:dataTable value="#{listaTiendasBean.tiendas}" var="tienda" id="listatiendas">
-                <p:column headerText="Id">
+            <p:dataTable value="#{listaTiendasBean.tiendas}" var="tienda" id="listatiendas"
+                         style="text-align: center">
+                <p:column headerText="Id" style="background-color:rgba(155,113,255,0.66)">
                     <h:outputText value="#{tienda.id}"/>
                 </p:column>
-                <p:column headerText="Nombre">
+                <p:column headerText="Nombre" style="background-color:rgba(155,113,255,0.66)">
                     <h:outputText value="#{tienda.nombre}"/>
                 </p:column>
-                <p:column headerText="Dirección">
+                <p:column headerText="Dirección" style="background-color:rgba(155,113,255,0.66)">
                     <h:outputText value="#{tienda.direccion}"/>
                 </p:column>
-                <p:column headerText="Nombre barrio">
+                <p:column headerText="Nombre barrio" style="background-color:rgba(155,113,255,0.66)">
                     <h:outputText value="#{tienda.nombreBarrio}"/>
                 </p:column>
             </p:dataTable>

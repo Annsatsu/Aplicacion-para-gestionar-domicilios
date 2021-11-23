@@ -7,7 +7,7 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets">
     <h:head>
-        <title> Lista usuarios </title>
+        <title> Lista domicilios </title>
     </h:head>
 
     <body style="background-color:rgba(139,230,255,0.83)">
@@ -17,10 +17,10 @@
                 <h:form>
                     <!--Menu-->
                     <p:menubar style="width: 1030px; background-color:#c1ffb3">
-                        <p:menuitem value="Regresar" icon="ui-icon-arrowreturn-1-w" url="crearusuario.xhtml"/>
-                        <p:menuitem value="Lista de usuarios" disabled="true"
+                        <p:menuitem value="Regresar" icon="ui-icon-arrowreturn-1-w" url="administrador.xhtml"/>
+                        <p:menuitem value="Lista de domicilios" disabled="true"
                                     style="color: aliceblue;font-size:25px;background-color:black;
-                                                                            margin-left: 280px"/>
+                                                                                    margin-left: 280px"/>
                         <p:menuitem value="Cerrar sesión" url="index.xhtml" icon="ui-icon-power"
                                     style="background-color:rgba(14,153,255,0.53);margin-left: 285px"/>
                     </p:menubar>
@@ -29,17 +29,23 @@
             <div class="ui-g-1"><p:graphicImage value="imagenes/archivo.png"/></div>
         </div>
         <h:form>
-            <p:dataTable value="#{listaUsuariosBean.usuarios}" var="usuario" id="listausuarios"
+            <p:dataTable value="#{listaDomiciliosBean.domicilios}" var="domicilio" id="listadomicilios"
                          style="text-align: center">
-                <p:column headerText="Nombre usuario">
-                    <h:outputText value="#{usuario.nombreUsuario}"/>
+                <p:column headerText="Numero factura">
+                    <h:outputText value="#{domicilio.numeroFactura}"/>
                 </p:column>
-                <p:column headerText="Tipo de usuario">
-                    <h:outputText value="#{usuario.tipoUsuario}"/>
+                <p:column headerText="Cliente">
+                    <h:outputText value="#{domicilio.nombreCliente}"/>
+                </p:column>
+                <p:column headerText="Id tienda">
+                    <h:outputText value="#{domicilio.idTienda}"/>
+                </p:column>
+                <p:column headerText="Productos comprados">
+                    <p:graphicImage value="/imagenes/proceso.png"/>
                 </p:column>
             </p:dataTable>
             <p:commandButton value="Actualizar"
-                             actionListener="#{listaUsuariosBean.init()}" update="listausuarios"/>
+                             actionListener="#{listaDomiciliosBean.init()}" update="listadomicilios"/>
         </h:form>
     </body>
 </html>
