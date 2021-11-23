@@ -11,11 +11,11 @@ class ProductoCtrlTest {
     void agregarProducto() {
         ProductoCtrl productoCtrl =new ProductoCtrl();
         Producto producto=new Producto();
-        producto.setNombre("guia");
+        producto.setNombre("melon");
         producto.setPeso(0);
         producto.setPrecio(0);
-        producto.setReferencia(4);
-        producto.setCantidadProducto(20);
+        producto.setReferencia(54);
+        producto.setCantidadProducto(10);
         productoCtrl.agregarProducto(producto);
     }
 
@@ -23,7 +23,7 @@ class ProductoCtrlTest {
     void buscarProducto() {
         ProductoCtrl productoCtrl= new ProductoCtrl();
         Producto producto=new Producto();
-        System.out.println(productoCtrl.buscarProducto(1).getNombre());
+        System.out.println(productoCtrl.buscarProducto(54).getNombre());
 
     }
 
